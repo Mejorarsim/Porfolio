@@ -83,7 +83,7 @@ export function HeroSection() {
             </Button>
             <Button variant="ghost" size="sm" asChild>
               <a
-                href="https://github.com/simrangarg"
+                href="https://github.com/Mejorarsim"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-gray-800 dark:hover:text-gray-200 transform hover:scale-110 transition-all duration-300"
