@@ -27,7 +27,7 @@ export function HeroSection() {
           <div className="mb-8 animate-fade-in">
             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden ring-4 ring-primary/30 shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <img
-                src="/images/simran-techie-profile.png"
+                src="/Porfolio/images/simran-techie-profile.png"
                 alt="Simran Garg - Data Engineer & Content Creator"
                 className="w-full h-full object-cover"
               />
