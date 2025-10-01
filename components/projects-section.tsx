@@ -11,39 +11,6 @@ export function ProjectsSection() {
 
   const projects = [
     {
-      title: "AI Chatbot with Neural Networks",
-      description:
-        "Built a fully functional AI chatbot with 98% accuracy using neural networks and NLP. Features multiple interfaces (terminal, GUI, testing), sub-second response times, and 11 conversation categories with professional-grade performance.",
-      period: "2024",
-      type: "AI/ML Project",
-      technologies: ["Python", "TensorFlow", "NLTK", "Neural Networks", "NLP", "Tkinter"],
-      githubUrl: "https://github.com/Mejorarsim/AI-Chat-Bot",
-      demoVideo: "/Porfolio/demos/chatbot.mp4",
-      featured: true,
-    },
-    {
-      title: "MSc Dissertation: Differential Privacy with Deep Learning",
-      description:
-        "Experimented with differential privacy in deep learning for human activity recognition using UCF101 dataset. Analyzed trade-offs between privacy protection and model performance, achieving balanced results with data augmentation techniques.",
-      period: "2024",
-      type: "Academic Research",
-      technologies: ["Python", "TensorFlow", "Deep Learning", "Differential Privacy", "Computer Vision", "PyTorch"],
-      githubUrl: "https://github.com/Mejorarsim/DP-DeepLearning-HAR",
-      demoVideo: "/Porfolio/demos/dp-deep-learning.mp4",
-      featured: true,
-    },
-    {
-      title: "Real-Time Retail Analytics Pipeline",
-      description:
-        "Production-grade streaming pipeline for real-time retail analytics with sub-second latency. Implements Kappa architecture using Kafka, Spark Structured Streaming, and PostgreSQL for windowed aggregations with 180+ events/min throughput.",
-      period: "2024",
-      type: "Data Engineering",
-      technologies: ["Apache Kafka", "Apache Spark", "PostgreSQL", "Streamlit", "Docker", "Python"],
-      githubUrl: "https://github.com/Mejorarsim/kafka-spark-streaming-pipeline",
-      demoVideo: "/Porfolio/demos/kafka-pipeline.mp4",
-      featured: true,
-    },
-    {
       title: "Bike Rental Management System",
       description:
         "Developed a Python-based bike rental app with map interface, multi-role access (User/Operator/Manager), secure authentication, wallet system, and comprehensive reporting. Features real-time bike tracking and admin dashboard.",
@@ -63,6 +30,7 @@ export function ProjectsSection() {
       technologies: ["HTML", "JavaScript", "D3.js", "Data Visualization", "Interactive Design"],
       githubUrl: "https://github.com/Mejorarsim/Information-Visualization",
       demoVideo: "/Porfolio/demos/info-viz.mp4",
+      featured: true,
     },
     {
       title: "Geo-Localization Analysis of Tweets",
@@ -73,6 +41,40 @@ export function ProjectsSection() {
       technologies: ["Python", "GeoPandas", "NLTK", "Spatial Analysis", "Data Mining", "Visualization"],
       githubUrl: "https://github.com/Mejorarsim/Geo-Localization",
       demoVideo: "/Porfolio/demos/geo-localization.mp4",
+      featured: true,
+    },
+    {
+      title: "AI Chatbot with Neural Networks",
+      description:
+        "Built a fully functional AI chatbot with 98% accuracy using neural networks and NLP. Features multiple interfaces (terminal, GUI, testing), sub-second response times, and 11 conversation categories with professional-grade performance.",
+      period: "2024",
+      type: "AI/ML Project",
+      technologies: ["Python", "TensorFlow", "NLTK", "Neural Networks", "NLP", "Tkinter"],
+      githubUrl: "https://github.com/Mejorarsim/AI-Chat-Bot",
+      demoVideo: "/Porfolio/demos/chatbot.mp4",
+      featured: true,
+    },
+    {
+      title: "Real-Time Retail Analytics Pipeline",
+      description:
+        "Production-grade streaming pipeline for real-time retail analytics with sub-second latency. Implements Kappa architecture using Kafka, Spark Structured Streaming, and PostgreSQL for windowed aggregations with 180+ events/min throughput.",
+      period: "2024",
+      type: "Data Engineering",
+      technologies: ["Apache Kafka", "Apache Spark", "PostgreSQL", "Streamlit", "Docker", "Python"],
+      githubUrl: "https://github.com/Mejorarsim/kafka-spark-streaming-pipeline",
+      demoVideo: "/Porfolio/demos/kafka-pipeline.mp4",
+      featured: true,
+    },
+    {
+      title: "MSc Dissertation: Differential Privacy with Deep Learning",
+      description:
+        "Experimented with differential privacy in deep learning for human activity recognition using UCF101 dataset. Analyzed trade-offs between privacy protection and model performance, achieving balanced results with data augmentation techniques.",
+      period: "2024",
+      type: "Academic Research",
+      technologies: ["Python", "TensorFlow", "Deep Learning", "Differential Privacy", "Computer Vision", "PyTorch"],
+      githubUrl: "https://github.com/Mejorarsim/DP-DeepLearning-HAR",
+      demoVideo: "/Porfolio/demos/dp-deep-learning.mp4",
+      featured: true,
     },
   ]
 
