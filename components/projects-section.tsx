@@ -16,7 +16,7 @@ export function ProjectsSection() {
       type: "AI/ML Project",
       technologies: ["Python", "TensorFlow", "NLTK", "Neural Networks", "NLP", "Tkinter"],
       githubUrl: "https://github.com/Mejorarsim/AI-Chat-Bot",
-      demoVideo: "/Porfolio/videos/chatbot.mp4",
+      demoVideo: "/Porfolio/demos/chatbot.mp4",
       featured: true,
     },
     {
@@ -27,7 +27,7 @@ export function ProjectsSection() {
       type: "Academic Research",
       technologies: ["Python", "TensorFlow", "Deep Learning", "Differential Privacy", "Computer Vision", "PyTorch"],
       githubUrl: "https://github.com/Mejorarsim/DP-DeepLearning-HAR",
-      demoVideo: "/Porfolio/videos/dp-deep-learning.mp4",
+      demoVideo: "/Porfolio/demos/dp-deep-learning.mp4",
       featured: true,
     },
     {
@@ -38,7 +38,7 @@ export function ProjectsSection() {
       type: "Data Engineering",
       technologies: ["Apache Kafka", "Apache Spark", "PostgreSQL", "Streamlit", "Docker", "Python"],
       githubUrl: "https://github.com/Mejorarsim/kafka-spark-streaming-pipeline",
-      demoVideo: "/Porfolio/videos/kafka-pipeline.mp4",
+      demoVideo: "/Porfolio/demos/kafka-pipeline.mp4",
       featured: true,
     },
     {
@@ -49,7 +49,7 @@ export function ProjectsSection() {
       type: "Full-Stack Application",
       technologies: ["Python", "SQLite3", "Tkinter", "PIL", "GUI Development", "Database Design"],
       githubUrl: "https://github.com/Mejorarsim/Bike-Rental-App",
-      demoVideo: "/Porfolio/videos/bike-rental.mp4",
+      demoVideo: "/Porfolio/demos/bike-rental.mp4",
       featured: true,
     },
     {
@@ -60,7 +60,7 @@ export function ProjectsSection() {
       type: "Data Visualization",
       technologies: ["HTML", "JavaScript", "D3.js", "Data Visualization", "Interactive Design"],
       githubUrl: "https://github.com/Mejorarsim/Information-Visualization",
-      demoVideo: "/Porfolio/videos/info-viz.mp4",
+      demoVideo: "/Porfolio/demos/info-viz.mp4",
     },
     {
       title: "Geo-Localization Analysis of Tweets",
@@ -70,7 +70,7 @@ export function ProjectsSection() {
       type: "Data Science",
       technologies: ["Python", "GeoPandas", "NLTK", "Spatial Analysis", "Data Mining", "Visualization"],
       githubUrl: "https://github.com/Mejorarsim/Geo-Localization",
-      demoVideo: "/Porfolio/videos/geo-localization.mp4",
+      demoVideo: "/Porfolio/demos/geo-localization.mp4",
     },
   ]
 
