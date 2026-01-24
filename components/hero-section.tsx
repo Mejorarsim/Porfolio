@@ -44,9 +44,8 @@ export function HeroSection() {
               Data Engineer | Cloud Enthusiast | Content Creator
             </p>
 
-            <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty animate-slide-up delay-300">
-              Passionate Data Engineer at Central Co-op with 3+ years of experience building scalable data pipelines,
-              automating ETL workflows, and deploying cloud solutions. Also sharing my UK student journey on YouTube!
+<p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty animate-slide-up delay-300">
+              I'm a results-driven Data Engineer with 3+ years of experience transforming raw data into actionable insights. Specialising in building scalable ETL pipelines, cloud-native solutions on Azure and AWS, and real-time analytics platforms. I bring a strong foundation in Python, SQL, and data orchestration tools like Airflow and Fabric. My motivation lies in solving complex data challenges that drive business decisions. I'm also a content creator, sharing my tech journey and career insights on YouTube.
             </p>
           </div>
 

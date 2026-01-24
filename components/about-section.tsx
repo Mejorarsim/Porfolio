@@ -43,7 +43,7 @@ export function AboutSection() {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white text-lg">Location</h3>
-                  <p className="text-gray-600 dark:text-gray-400 font-medium">England, UK 🇬🇧</p>
+                  <p className="text-gray-600 dark:text-gray-400 font-medium">United Kingdom 🇬🇧</p>
                 </div>
               </div>
             </CardContent>

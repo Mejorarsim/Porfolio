@@ -33,8 +33,8 @@ export function ExperienceSection() {
       ],
       skills: ["R Programming", "QCA Analysis", "Data Modeling", "Statistical Analysis", "Research"],
     },
-    {
-      title: "Platform Engineer",
+{
+      title: "Data Consultant",
       company: "Prospecta Software Company",
       location: "Delhi, India",
       period: "March 2023 – August 2023",

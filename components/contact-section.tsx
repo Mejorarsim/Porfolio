@@ -71,7 +71,7 @@ export function ContactSection() {
     {
       icon: MapPin,
       label: "Location",
-      value: "England, UK",
+      value: "United Kingdom",
       href: null,
     },
     {
@@ -106,8 +106,7 @@ export function ContactSection() {
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            I'm always excited to collaborate on projects that are technically robust and purpose-driven. 
-            Let's connect if you're building something meaningful with data!
+            Whether you'd like to explore my projects in detail, discuss emerging trends in data engineering across UK industries, or collaborate on innovative solutions—I'd love to hear from you. Let's connect and turn ideas into impactful outcomes!
           </p>
         </div>
 
@@ -121,7 +120,7 @@ export function ContactSection() {
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon
                 const content = (
-                  <div className="flex items-center space-x-4 p-4 rounded-lg bg-white/50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg backdrop-blur-sm">
+                  <div key={index} className="flex items-center space-x-4 p-4 rounded-lg bg-white/50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 transform hover:scale-105 hover:shadow-lg backdrop-blur-sm">
                     <div className="p-3 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-lg">
                       <IconComponent className="h-5 w-5 text-teal-600 dark:text-teal-400" />
                     </div>

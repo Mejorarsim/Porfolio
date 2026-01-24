@@ -65,13 +65,13 @@ export function ProjectsSection() {
       demoVideo: "/Porfolio/demos/kafka-pipeline.mp4",
       featured: true,
     },
-    {
-      title: "MSc Dissertation: Differential Privacy with Deep Learning",
+{
+      title: "Differential Privacy with Deep Learning for HAR",
       description:
-        "Experimented with differential privacy in deep learning for human activity recognition using UCF101 dataset. Analyzed trade-offs between privacy protection and model performance, achieving balanced results with data augmentation techniques.",
+        "Built privacy-preserving ML models for human activity recognition using UCF101 video dataset. Implemented four model variants comparing differential privacy vs non-DP approaches with data augmentation. Used TensorFlow, Opacus, and PyTorch to analyse accuracy-privacy trade-offs with ROC curves, confusion matrices, and F1 scores.",
       period: "2024",
-      type: "Academic Research",
-      technologies: ["Python", "TensorFlow", "Deep Learning", "Differential Privacy", "Computer Vision", "PyTorch"],
+      type: "AI/ML Research",
+      technologies: ["Python", "TensorFlow", "Opacus", "PyTorch", "OpenCV", "Differential Privacy"],
       githubUrl: "https://github.com/Mejorarsim/DP-DeepLearning-HAR",
       demoVideo: "/Porfolio/demos/dp-deep-learning.mp4",
       featured: true,
@@ -134,11 +134,12 @@ export function ProjectsSection() {
                       </a>
                     </Button>
                   )}
-                  {project.demoVideo && (
+{project.demoVideo && (
                     <Button 
-                      variant="ghost" 
+                      variant="default" 
                       size="sm"
                       onClick={() => setSelectedVideo(project)}
+                      className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-gray-900"
                     >
                       <Play className="h-4 w-4 mr-1" />
                       Demo
