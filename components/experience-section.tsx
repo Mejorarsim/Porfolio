@@ -1,9 +1,15 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin, Building, Briefcase } from "lucide-react"
+type Experience = {
+  title: string
+  company: string
+  location: string
+  period: string
+  type: string
+  description: string[]
+  skills: string[]
+}
 
 export function ExperienceSection() {
-  const experiences = [
+  const experiences: Experience[] = [
     {
       title: "Data Engineer",
       company: "Central England Co-operative",
@@ -73,86 +79,41 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-white via-teal-50/20 to-cyan-50/30 dark:from-slate-900 dark:via-teal-950/20 dark:to-cyan-950/30 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-40 -left-20 w-72 h-72 bg-teal-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-40 -right-20 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+    <section id="experience" className="py-20 md:py-28 border-t border-border bg-muted">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">Experience</h2>
+        <p className="mt-3 text-lg text-muted-foreground max-w-2xl">
+          3+ years across data engineering, analytics and research
+        </p>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent">
-              Professional Experience
-            </span>
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            3+ years across data engineering, analytics and research
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="group relative overflow-hidden border-0 shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl hover:shadow-xl transition-all duration-300">
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-teal-500 via-cyan-500 to-blue-500"></div>
-              <CardContent className="p-6 pl-7">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                  {/* Left side - Job details */}
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                          {exp.title}
-                        </h3>
-                        <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
-                          <div className="flex items-center gap-1">
-                            <Building className="h-4 w-4" />
-                            <span className="font-medium">{exp.company}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin className="h-4 w-4" />
-                            <span>{exp.location}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4" />
-                            <span>{exp.period}</span>
-                          </div>
-                          {exp.type && (
-                            <Badge className="bg-teal-600 text-white hover:bg-teal-700">
-                              {exp.type}
-                            </Badge>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <ul className="space-y-1.5 mb-4">
-                      {exp.description.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start gap-2">
-                          <div className="w-1 h-1 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Skills */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {exp.skills.map((skill, skillIndex) => (
-                        <Badge 
-                          key={skillIndex} 
-                          variant="outline" 
-                          className="text-xs bg-teal-50 dark:bg-teal-900/20 border-teal-200 dark:border-teal-700 text-teal-700 dark:text-teal-300"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+        <div className="mt-12">
+          {experiences.map((exp) => (
+            <article
+              key={`${exp.company}-${exp.period}`}
+              className="grid gap-x-12 gap-y-4 border-t border-border py-10 md:grid-cols-[240px_1fr]"
+            >
+              <div>
+                <p className="text-sm font-medium text-primary">{exp.period}</p>
+                <p className="mt-1 text-base font-semibold text-foreground">{exp.company}</p>
+                <p className="text-sm text-muted-foreground">
+                  {exp.location}
+                  {exp.type ? `, ${exp.type}` : ""}
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold tracking-tight text-foreground">{exp.title}</h3>
+                <ul className="mt-4 space-y-2.5 list-disc pl-5 marker:text-primary max-w-3xl">
+                  {exp.description.map((item) => (
+                    <li key={item} className="text-base leading-relaxed text-muted-foreground">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-sm text-muted-foreground max-w-3xl">
+                  <span className="font-medium text-foreground">Worked with:</span> {exp.skills.join(", ")}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>

@@ -1,109 +1,90 @@
-"use client"
+import { ArrowRight, Youtube, Github, Linkedin, Mail } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { ArrowDown, Youtube, Github, Linkedin, Mail } from "lucide-react"
+const flow = [
+  { figure: "600+", caption: "source objects ingested: APIs, databases, Delta Sharing and SFTP" },
+  { figure: "1", caption: "metadata driven framework on Data Factory, Synapse and Databricks" },
+  { figure: "119", caption: "tables across 8 schemas rebuilt onto a Fabric lakehouse" },
+  { figure: "30%", caption: "runtime cut on a critical workload" },
+]
+
+const links = [
+  { href: "mailto:simranpggw@gmail.com", label: "Email", icon: Mail },
+  { href: "https://linkedin.com/in/simran-g-97002291", label: "LinkedIn", icon: Linkedin },
+  { href: "https://github.com/Mejorarsim", label: "GitHub", icon: Github },
+  { href: "https://www.youtube.com/@EvolvingSimran", label: "YouTube", icon: Youtube },
+]
 
 export function HeroSection() {
-  const scrollToAbout = () => {
-    const element = document.getElementById("experience")
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-primary/5 to-secondary/10 relative overflow-hidden"
-    >
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-500"></div>
-      </div>
+    <section id="hero" className="pt-32 pb-20 md:pt-40 md:pb-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-center">
+          <div>
+            <p className="text-base font-medium text-primary mb-4">
+              Data Engineer, Azure data platforms: Synapse, Microsoft Fabric, Databricks
+            </p>
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-foreground mb-6">Simran Garg</h1>
+            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-2xl">
+              I'm a Data Engineer at Central Co-op, where I own an enterprise Azure data platform built on Synapse,
+              Data Factory, Microsoft Fabric and Databricks. I rebuilt 119 tables across 8 schemas onto a Fabric
+              lakehouse, run 600+ source objects through one metadata driven framework and cut a critical workload's
+              runtime by 30%.
+            </p>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="text-center">
-          <div className="mb-8 animate-fade-in">
-            <div className="w-40 h-40 mx-auto rounded-full overflow-hidden ring-4 ring-primary/30 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-              <img
-                src="/Porfolio/images/simran-techie-profile.png"
-                alt="Simran Garg - Data Engineer & Content Creator"
-                className="w-full h-full object-cover"
-              />
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <a
+                href="#experience"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-[#0b5a70]"
+              >
+                See my experience
+              </a>
+              <div className="flex items-center gap-1">
+                {links.map((link) => {
+                  const Icon = link.icon
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+                      className="p-2.5 rounded-md text-muted-foreground transition-colors hover:text-primary hover:bg-accent"
+                    >
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  )
+                })}
+              </div>
             </div>
           </div>
 
-          {/* Main Content with sliding animations */}
-          <div className="animate-slide-up">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[family-name:var(--font-space-grotesk)] text-balance bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Simran Garg
-            </h1>
-
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance animate-slide-up delay-200">
-              Data Engineer | Azure Data Platforms: Synapse, Microsoft Fabric, Databricks | Content Creator
-            </p>
-
-<p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty animate-slide-up delay-300">
-              I'm a Data Engineer at Central Co-op, where I own an enterprise Azure data platform built on Synapse, Data Factory, Microsoft Fabric and Databricks. I rebuilt 119 tables across 8 schemas onto a Fabric lakehouse, run 600+ source objects through one metadata driven framework and cut a critical workload's runtime by 30%.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up delay-400">
-            <button
-              onClick={scrollToAbout}
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-lg font-semibold px-8 py-3 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            >
-              View My Work
-              <ArrowDown className="ml-2 h-5 w-5" />
-            </button>
-          </div>
-
-          <div className="flex justify-center space-x-6 animate-slide-up delay-500">
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href="mailto:simranpggw@gmail.com"
-                className="text-muted-foreground hover:text-red-500 transform hover:scale-110 transition-all duration-300"
-              >
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
-              </a>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href="https://linkedin.com/in/simran-g-97002291"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-blue-600 transform hover:scale-110 transition-all duration-300"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href="https://github.com/Mejorarsim"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-gray-800 dark:hover:text-gray-200 transform hover:scale-110 transition-all duration-300"
-              >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </a>
-            </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href="https://www.youtube.com/@EvolvingSimran"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-red-600 transform hover:scale-110 transition-all duration-300"
-              >
-                <Youtube className="h-5 w-5" />
-                <span className="sr-only">YouTube</span>
-              </a>
-            </Button>
-          </div>
+          <img
+            src="/Porfolio/images/simran-techie-profile.png"
+            alt="Portrait of Simran Garg"
+            className="w-40 h-52 md:w-64 md:h-80 rounded-2xl object-cover border border-border"
+          />
         </div>
+
+        {/* The platform in one line, read left to right like a pipeline */}
+        <ol
+          aria-label="The Central Co-op platform at a glance"
+          className="mt-16 grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-4"
+        >
+          {flow.map((step, index) => (
+            <li key={step.caption} className="relative bg-muted px-6 py-6">
+              <p className="text-4xl font-semibold tracking-tight text-foreground">{step.figure}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.caption}</p>
+              {index < flow.length - 1 && (
+                <span
+                  aria-hidden="true"
+                  className="hidden md:flex absolute -right-3.5 top-8 z-10 h-7 w-7 items-center justify-center rounded-full border border-border bg-background text-primary"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              )}
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   )

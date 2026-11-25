@@ -16,6 +16,9 @@ export default function Home() {
       <SkillsSection />
       <AboutSection />
       <ContactSection />
+      <footer className="border-t border-border">
+        <div className="max-w-6xl mx-auto px-6 py-8 text-sm text-muted-foreground">Simran Garg, Birmingham, UK</div>
+      </footer>
     </main>
   )
 }

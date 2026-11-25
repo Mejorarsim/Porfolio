@@ -1,8 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+
+const navItems = [
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+]
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,9 +17,8 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "skills", "experience", "projects", "contact"]
-      const scrollPosition = window.scrollY + 100
-
+      const sections = ["hero", ...navItems.map((item) => item.id)]
+      const scrollPosition = window.scrollY + 120
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
@@ -24,73 +30,54 @@ export function Navigation() {
         }
       }
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-    setIsOpen(false)
-  }
-
-  const navItems = [
-    { id: "hero", label: "Home" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
-  ]
+  const linkClass = (id: string) =>
+    `text-sm font-medium transition-colors hover:text-primary ${
+      activeSection === id ? "text-primary" : "text-muted-foreground"
+    }`
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur border-b border-border">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
-          <div className="font-bold text-xl text-primary font-[family-name:var(--font-space-grotesk)]">Simran Garg</div>
+          <a href="#hero" className="font-semibold text-lg tracking-tight text-foreground">
+            Simran Garg
+          </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  activeSection === item.id ? "text-primary" : "text-muted-foreground"
-                }`}
-              >
+              <a key={item.id} href={`#${item.id}`} className={linkClass(item.id)}>
                 {item.label}
-              </button>
+              </a>
             ))}
           </div>
 
-          {/* Mobile Navigation Button */}
-          <div className="md:hidden">
-            <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-          </div>
+          <button
+            type="button"
+            className="md:hidden p-2 text-foreground"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-primary ${
-                    activeSection === item.id ? "text-primary" : "text-muted-foreground"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+          <div className="md:hidden border-t border-border py-2">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => setIsOpen(false)}
+                className={`block py-2 ${linkClass(item.id)} text-base`}
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
         )}
       </div>
