@@ -55,25 +55,34 @@ export function ProjectsSection() {
       featured: true,
     },
     {
-      title: "Real-Time Retail Analytics Pipeline",
+      title: "Real Time Streaming Pipeline",
       description:
-        "Production-grade streaming pipeline for real-time retail analytics with sub-second latency. Implements Kappa architecture using Kafka, Spark Structured Streaming, and PostgreSQL for windowed aggregations with 180+ events/min throughput.",
+        "Kappa style event pipeline built end to end on Kafka, Spark Structured Streaming, Delta Lake and PostgreSQL, with idempotent writes, windowed aggregations, checkpointed state recovery and out of order event handling. Containerised with Docker and deployed through CI/CD, with source against sink reconciliation, consumer lag alerting and a Streamlit monitoring dashboard.",
       period: "2024",
       type: "Data Engineering",
-      technologies: ["Apache Kafka", "Apache Spark", "PostgreSQL", "Streamlit", "Docker", "Python"],
+      technologies: ["Apache Kafka", "Spark Structured Streaming", "Delta Lake", "PostgreSQL", "Streamlit", "Docker"],
       githubUrl: "https://github.com/Mejorarsim/kafka-spark-streaming-pipeline",
       demoVideo: "/Porfolio/demos/kafka-pipeline.mp4",
       featured: true,
     },
 {
-      title: "Differential Privacy with Deep Learning for HAR",
+      title: "Privacy Preserving Deep Learning for Human Activity Recognition",
       description:
-        "Built privacy-preserving ML models for human activity recognition using UCF101 video dataset. Implemented four model variants comparing differential privacy vs non-DP approaches with data augmentation. Used TensorFlow, Opacus, and PyTorch to analyse accuracy-privacy trade-offs with ROC curves, confusion matrices, and F1 scores.",
+        "Implemented differentially private training on the UCF101 dataset (13,320 videos) and measured the accuracy cost of the privacy budget: 62.77% private against a 77.23% baseline. Runs are automated and reproducible, with experiment tracking, so the trade off between privacy and accuracy is an explicit decision.",
       period: "2024",
       type: "AI/ML Research",
       technologies: ["Python", "TensorFlow", "Opacus", "PyTorch", "OpenCV", "Differential Privacy"],
       githubUrl: "https://github.com/Mejorarsim/DP-DeepLearning-HAR",
-      demoVideo: "/Porfolio/demos/dp-deep-learning.mp4",
+      featured: true,
+    },
+    {
+      title: "Power BI Dashboards",
+      description:
+        "Semantic models and reports built on star schemas, with DAX measures and row level security. The collection covers Amazon Prime Video content, Blinkit grocery sales, IT budget analysis and a LinkedIn profile dashboard.",
+      period: "",
+      type: "Business Intelligence",
+      technologies: ["Power BI", "DAX", "Star Schema", "Row Level Security"],
+      githubUrl: "https://github.com/Mejorarsim/Power-BI-Dashboards",
       featured: true,
     },
   ]
@@ -86,7 +95,7 @@ export function ProjectsSection() {
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-            A showcase of data engineering, machine learning, and cloud computing projects
+            Data engineering, machine learning and analytics projects
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -111,10 +120,12 @@ export function ProjectsSection() {
                 <CardTitle className="text-lg font-bold text-balance font-[family-name:var(--font-space-grotesk)]">
                   {project.title}
                 </CardTitle>
-                <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-                  <Calendar className="h-4 w-4" />
-                  <span>{project.period}</span>
-                </div>
+                {project.period && (
+                  <div className="flex items-center space-x-1 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4" />
+                    <span>{project.period}</span>
+                  </div>
+                )}
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4 text-sm leading-relaxed text-pretty">{project.description}</p>
