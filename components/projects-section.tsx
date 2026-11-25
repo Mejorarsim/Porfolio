@@ -2,6 +2,7 @@
 
 import { ArrowDown, Github, Play, X } from "lucide-react"
 import { useState } from "react"
+import { Reveal } from "@/components/reveal"
 
 type Project = {
   title: string
@@ -28,21 +29,21 @@ function PipelineDiagram() {
     <div
       role="img"
       aria-label="Architecture: Python generator to Apache Kafka to Spark Structured Streaming to PostgreSQL to Streamlit dashboard"
-      className="rounded-lg bg-muted p-5"
+      className="rounded-lg bg-night p-4"
     >
-      <p className="text-sm font-semibold text-foreground mb-4">Architecture</p>
+      <p className="text-sm font-semibold text-white mb-3">Architecture</p>
       <div className="flex flex-col items-stretch">
         {pipelineStages.map((stage, index) => (
           <div key={stage.name} className="flex flex-col items-center">
-            <div className="w-full rounded-md border border-border bg-background px-4 py-2.5">
-              <p className="text-sm font-semibold text-foreground">{stage.name}</p>
-              <p className="text-sm text-muted-foreground">{stage.detail}</p>
+            <div className="w-full rounded-md border border-white/15 bg-white/[0.06] px-4 py-1.5">
+              <p className="text-sm font-semibold text-white">{stage.name}</p>
+              <p className="text-sm text-slate-300">{stage.detail}</p>
             </div>
-            {index < pipelineStages.length - 1 && <ArrowDown className="h-4 w-4 my-1.5 text-primary" aria-hidden="true" />}
+            {index < pipelineStages.length - 1 && <ArrowDown className="h-3.5 w-3.5 my-1 text-cyan-300" aria-hidden="true" />}
           </div>
         ))}
       </div>
-      <p className="text-sm text-muted-foreground mt-4">All services run under Docker Compose</p>
+      <p className="text-sm text-slate-300 mt-3">All services run under Docker Compose</p>
     </div>
   )
 }
@@ -105,40 +106,39 @@ export function ProjectsSection() {
   ]
 
   return (
-    <section id="projects" className="py-20 md:py-28 border-t border-border">
+    <section id="projects" className="py-12 md:py-16 border-t border-border">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">Projects</h2>
-        <p className="mt-3 text-lg text-muted-foreground max-w-2xl">
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground heading-bar">Projects</h2>
+        <p className="mt-3 text-base text-muted-foreground max-w-2xl">
           Three projects, each with the problem, the approach and what came out of it
         </p>
 
-        <div className="mt-12 grid lg:grid-cols-2 gap-6">
+        <div className="mt-8 grid lg:grid-cols-2 gap-5">
           {projects.map((project) => (
-            <article
-              key={project.title}
-              className={`rounded-xl border border-border bg-card p-6 md:p-8 ${project.lead ? "lg:col-span-2" : ""}`}
-            >
+            <Reveal key={project.title} className={project.lead ? "lg:col-span-2" : ""}>
+            <article className="lift relative h-full overflow-hidden rounded-xl border border-border bg-card p-5 md:p-6">
+              <span aria-hidden="true" className="bg-brand absolute inset-x-0 top-0 h-1" />
               <div className={project.lead ? "grid md:grid-cols-5 gap-8 md:gap-10" : ""}>
                 <div className={project.lead ? "md:col-span-3" : ""}>
                   <p className="text-sm font-medium text-primary">{project.type}</p>
-                  <h3 className="mt-1 text-2xl font-semibold tracking-tight text-foreground text-balance">
+                  <h3 className="mt-1 text-xl font-semibold tracking-tight text-foreground text-balance">
                     {project.title}
                   </h3>
 
-                  <dl className="mt-6 space-y-4">
+                  <dl className="mt-4 space-y-2.5">
                     {sections(project).map((part) => (
                       <div key={part.label}>
                         <dt className="text-sm font-semibold text-foreground">{part.label}</dt>
-                        <dd className="mt-1 text-base leading-relaxed text-muted-foreground">{part.text}</dd>
+                        <dd className="mt-0.5 text-[15px] leading-6 text-muted-foreground">{part.text}</dd>
                       </div>
                     ))}
                   </dl>
 
-                  <p className="mt-6 text-sm text-muted-foreground">
+                  <p className="mt-4 text-sm text-muted-foreground">
                     <span className="font-medium text-foreground">Built with:</span> {project.technologies.join(", ")}
                   </p>
 
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="mt-4 flex flex-wrap gap-3">
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -152,7 +152,7 @@ export function ProjectsSection() {
                       <button
                         type="button"
                         onClick={() => setSelectedVideo(project)}
-                        className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-[#0b5a70]"
+                        className="inline-flex items-center gap-2 bg-brand rounded-md px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
                       >
                         <Play className="h-4 w-4" />
                         Watch demo
@@ -167,10 +167,11 @@ export function ProjectsSection() {
                 )}
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
           <span className="font-semibold text-foreground">Earlier work</span>
           {earlierWork.map((item) => (
             <a

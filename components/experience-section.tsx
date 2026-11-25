@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/reveal"
+
 type Experience = {
   title: string
   company: string
@@ -79,41 +81,49 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="py-20 md:py-28 border-t border-border bg-muted">
+    <section id="experience" className="py-12 md:py-16 border-t border-border bg-muted">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">Experience</h2>
-        <p className="mt-3 text-lg text-muted-foreground max-w-2xl">
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground heading-bar">Experience</h2>
+        <p className="mt-3 text-base text-muted-foreground max-w-2xl">
           3+ years across data engineering, analytics and research
         </p>
 
-        <div className="mt-12">
-          {experiences.map((exp) => (
-            <article
-              key={`${exp.company}-${exp.period}`}
-              className="grid gap-x-12 gap-y-4 border-t border-border py-10 md:grid-cols-[240px_1fr]"
-            >
-              <div>
-                <p className="text-sm font-medium text-primary">{exp.period}</p>
-                <p className="mt-1 text-base font-semibold text-foreground">{exp.company}</p>
-                <p className="text-sm text-muted-foreground">
-                  {exp.location}
-                  {exp.type ? `, ${exp.type}` : ""}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold tracking-tight text-foreground">{exp.title}</h3>
-                <ul className="mt-4 space-y-2.5 list-disc pl-5 marker:text-primary max-w-3xl">
-                  {exp.description.map((item) => (
-                    <li key={item} className="text-base leading-relaxed text-muted-foreground">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 text-sm text-muted-foreground max-w-3xl">
-                  <span className="font-medium text-foreground">Worked with:</span> {exp.skills.join(", ")}
-                </p>
-              </div>
-            </article>
+        <div className="mt-6 relative">
+          <div aria-hidden="true" className="hidden md:block absolute left-[254px] top-2 bottom-2 w-px bg-border" />
+          {experiences.map((exp, index) => (
+            <Reveal key={`${exp.company}-${exp.period}`}>
+              <article className="relative grid gap-x-12 gap-y-3 py-5 md:grid-cols-[240px_1fr]">
+                <span
+                  aria-hidden="true"
+                  className={`hidden md:block absolute left-[247px] top-[26px] h-[15px] w-[15px] rounded-full border-[3px] border-[#f2f5f7] ${
+                    index === 0 ? "bg-brand" : "bg-violet-300"
+                  }`}
+                />
+                <div>
+                  <p className="inline-block rounded-full bg-accent px-3 py-1 text-sm font-medium text-accent-foreground">
+                    {exp.period}
+                  </p>
+                  <p className="mt-2 text-base font-semibold text-foreground">{exp.company}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {exp.location}
+                    {exp.type ? `, ${exp.type}` : ""}
+                  </p>
+                </div>
+                <div className="md:pl-6">
+                  <h3 className="text-lg font-semibold tracking-tight text-foreground">{exp.title}</h3>
+                  <ul className="mt-2 space-y-1 list-disc pl-5 marker:text-primary max-w-3xl">
+                    {exp.description.map((item) => (
+                      <li key={item} className="text-[15px] leading-6 text-muted-foreground">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-3 text-sm text-muted-foreground max-w-3xl">
+                    <span className="font-medium text-foreground">Worked with:</span> {exp.skills.join(", ")}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

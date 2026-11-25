@@ -1,11 +1,5 @@
-import { ArrowRight, Youtube, Github, Linkedin, Mail } from "lucide-react"
-
-const flow = [
-  { figure: "600+", caption: "source objects ingested: APIs, databases, Delta Sharing and SFTP" },
-  { figure: "1", caption: "metadata driven framework on Data Factory, Synapse and Databricks" },
-  { figure: "119", caption: "tables across 8 schemas rebuilt onto a Fabric lakehouse" },
-  { figure: "30%", caption: "runtime cut on a critical workload" },
-]
+import { Download, Youtube, Github, Linkedin, Mail } from "lucide-react"
+import { PipelineVisual } from "@/components/pipeline-visual"
 
 const links = [
   { href: "mailto:simranpggw@gmail.com", label: "Email", icon: Mail },
@@ -16,27 +10,44 @@ const links = [
 
 export function HeroSection() {
   return (
-    <section id="hero" className="pt-32 pb-20 md:pt-40 md:pb-24">
+    <section id="hero" className="hero-backdrop pt-24 pb-12 md:pt-28 md:pb-16 text-white">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-[1.05fr_1fr] gap-8 lg:gap-10 items-center">
           <div>
-            <p className="text-base font-medium text-primary mb-4">
+            <p className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3.5 py-1 text-sm font-medium text-emerald-200">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              Open to roles across the UK and Europe
+            </p>
+            <p className="text-base font-medium text-cyan-300 mb-4">
               Data Engineer, Azure data platforms: Synapse, Microsoft Fabric, Databricks
             </p>
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-foreground mb-6">Simran Garg</h1>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-2xl">
+            <h1 className="text-5xl md:text-6xl font-semibold tracking-tight mb-4">
+              <span className="text-brand-bright">Simran Garg</span>
+            </h1>
+            <p className="text-lg leading-relaxed text-slate-300 max-w-xl">
               I'm a Data Engineer at Central Co-op, where I own an enterprise Azure data platform built on Synapse,
               Data Factory, Microsoft Fabric and Databricks. I rebuilt 119 tables across 8 schemas onto a Fabric
               lakehouse, run 600+ source objects through one metadata driven framework and cut a critical workload's
               runtime by 30%.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
               <a
                 href="#experience"
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-[#0b5a70]"
+                className="bg-brand inline-flex items-center gap-2 rounded-md px-5 py-3 text-base font-semibold text-white shadow-lg shadow-violet-900/40 transition-transform hover:-translate-y-0.5"
               >
                 See my experience
+              </a>
+              <a
+                href="/Porfolio/Simran_Garg_CV.pdf"
+                download="Simran_Garg_CV.pdf"
+                className="inline-flex items-center gap-2 rounded-md border border-white/25 px-5 py-3 text-base font-semibold text-white transition-colors hover:border-cyan-300 hover:text-cyan-300"
+              >
+                <Download className="h-4 w-4" />
+                Download CV
               </a>
               <div className="flex items-center gap-1">
                 {links.map((link) => {
@@ -48,7 +59,7 @@ export function HeroSection() {
                       target={link.href.startsWith("mailto:") ? undefined : "_blank"}
                       rel="noopener noreferrer"
                       aria-label={link.label}
-                      className="p-2.5 rounded-md text-muted-foreground transition-colors hover:text-primary hover:bg-accent"
+                      className="p-2.5 rounded-md text-slate-300 transition-colors hover:text-white hover:bg-white/10"
                     >
                       <Icon className="h-5 w-5" />
                     </a>
@@ -58,33 +69,11 @@ export function HeroSection() {
             </div>
           </div>
 
-          <img
-            src="/Porfolio/images/simran-techie-profile.png"
-            alt="Portrait of Simran Garg"
-            className="w-40 h-52 md:w-64 md:h-80 rounded-2xl object-cover border border-border"
-          />
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 md:p-6">
+            <PipelineVisual />
+          </div>
         </div>
 
-        {/* The platform in one line, read left to right like a pipeline */}
-        <ol
-          aria-label="The Central Co-op platform at a glance"
-          className="mt-16 grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-4"
-        >
-          {flow.map((step, index) => (
-            <li key={step.caption} className="relative bg-muted px-6 py-6">
-              <p className="text-4xl font-semibold tracking-tight text-foreground">{step.figure}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.caption}</p>
-              {index < flow.length - 1 && (
-                <span
-                  aria-hidden="true"
-                  className="hidden md:flex absolute -right-3.5 top-8 z-10 h-7 w-7 items-center justify-center rounded-full border border-border bg-background text-primary"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                </span>
-              )}
-            </li>
-          ))}
-        </ol>
       </div>
     </section>
   )

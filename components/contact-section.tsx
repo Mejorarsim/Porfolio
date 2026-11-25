@@ -87,32 +87,32 @@ export function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-20 md:py-28 border-t border-border bg-muted">
+    <section id="contact" className="hero-backdrop py-12 md:py-16 text-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">Get in touch</h2>
-            <p className="mt-3 text-lg leading-relaxed text-muted-foreground max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight"><span className="text-brand-bright">Get in touch</span></h2>
+            <p className="mt-3 text-lg leading-relaxed text-slate-300 max-w-xl">
               If you'd like to talk through a project, a data engineering role or a platform problem you're working
               on, I'd be glad to hear from you.
             </p>
 
-            <ul className="mt-10 border-t border-border">
+            <ul className="mt-6 border-t border-white/10">
               {contactInfo.map((info) => {
                 const IconComponent = info.icon
                 const row = (
-                  <span className="flex items-center gap-4 py-4">
-                    <IconComponent className="h-5 w-5 text-primary shrink-0" />
+                  <span className="flex items-center gap-4 py-3">
+                    <IconComponent className="h-5 w-5 text-cyan-300 shrink-0" />
                     <span>
-                      <span className="block text-sm text-muted-foreground">{info.label}</span>
-                      <span className="block text-base font-medium text-foreground">{info.value}</span>
+                      <span className="block text-sm text-slate-400">{info.label}</span>
+                      <span className="block text-base font-medium text-white">{info.value}</span>
                     </span>
                   </span>
                 )
                 return (
-                  <li key={info.label} className="border-b border-border">
+                  <li key={info.label} className="border-b border-white/10">
                     {info.href ? (
-                      <a href={info.href} target="_blank" rel="noopener noreferrer" className="block transition-colors hover:bg-background">
+                      <a href={info.href} target="_blank" rel="noopener noreferrer" className="block transition-colors hover:bg-white/5">
                         {row}
                       </a>
                     ) : (
@@ -124,7 +124,7 @@ export function ContactSection() {
             </ul>
           </div>
 
-          <form onSubmit={handleSubmit} className="rounded-xl border border-border bg-background p-6 md:p-8 space-y-4 self-start">
+          <form onSubmit={handleSubmit} className="rounded-xl border border-white/10 bg-background text-foreground p-6 md:p-8 space-y-4 self-start shadow-2xl shadow-violet-950/50">
             <h3 className="text-xl font-semibold tracking-tight text-foreground">Send a message</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -142,12 +142,12 @@ export function ContactSection() {
             </div>
             <div>
               <label htmlFor="contact-message" className="block text-sm font-medium text-foreground mb-1.5">Message</label>
-              <Textarea id="contact-message" name="message" rows={5} value={formData.message} onChange={handleChange} required />
+              <Textarea id="contact-message" name="message" rows={3} value={formData.message} onChange={handleChange} required />
             </div>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-[#0b5a70]"
+              className="inline-flex w-full items-center justify-center gap-2 bg-brand rounded-md px-5 py-3 text-base font-semibold text-white transition-transform hover:-translate-y-0.5"
             >
               <Send className="h-4 w-4" />
               Open contact form

@@ -35,15 +35,15 @@ export function Navigation() {
   }, [])
 
   const linkClass = (id: string) =>
-    `text-sm font-medium transition-colors hover:text-primary ${
-      activeSection === id ? "text-primary" : "text-muted-foreground"
+    `text-sm font-medium transition-colors hover:text-white ${
+      activeSection === id ? "text-cyan-300" : "text-slate-300"
     }`
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0b1026]/85 backdrop-blur border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
-          <a href="#hero" className="font-semibold text-lg tracking-tight text-foreground">
+          <a href="#hero" className="font-semibold text-lg tracking-tight text-white">
             Simran Garg
           </a>
 
@@ -57,7 +57,7 @@ export function Navigation() {
 
           <button
             type="button"
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-white"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen(!isOpen)}
@@ -67,7 +67,7 @@ export function Navigation() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden border-t border-border py-2">
+          <div className="md:hidden border-t border-white/10 py-2">
             {navItems.map((item) => (
               <a
                 key={item.id}

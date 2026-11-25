@@ -4,67 +4,15 @@ const education = [
 ]
 
 const certifications = [
-  {
-    issuer: "Microsoft",
-    items: [
-      {
-        name: "Fabric Data Engineer Associate (DP-700)",
-        url: "https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/12a81ed560fc6b0c",
-      },
-      {
-        name: "DevOps Engineer Expert (AZ-400)",
-        url: "https://learn.microsoft.com/en-us/users/simrangarg-5670/transcript/71yqae52ox2wrw7",
-      },
-      {
-        name: "Azure Data Engineer Associate (DP-203)",
-        url: "https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/47d23e4949c96868",
-      },
-      {
-        name: "Fabric Analytics Engineer Associate (DP-600)",
-        url: "https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/a985ce8d0ebdbdde",
-      },
-    ],
-  },
-  {
-    issuer: "AWS",
-    items: [
-      {
-        name: "Cloud Practitioner (CLF-C02)",
-        url: "https://cp.certmetrics.com/amazon/en/public/verify/credential/6276e4cdc55a462eb3a94c90e95074bc",
-      },
-    ],
-  },
-  {
-    issuer: "Databricks",
-    items: [
-      {
-        name: "Data Engineer Associate",
-        url: "https://credentials.databricks.com/923b9b56-ff8e-4502-a99a-ca4dd2b3f618",
-      },
-    ],
-  },
-  {
-    issuer: "HashiCorp",
-    items: [
-      {
-        name: "Terraform Associate (004)",
-        url: "https://www.credly.com/badges/b7983113-c25d-434d-9f4e-7cb403edf8db/public_url",
-      },
-    ],
-  },
-  {
-    issuer: "Learning programmes",
-    items: [
-      {
-        name: "Anthropic: Claude AI Fluency and AI Engineering Learning Path, including Model Context Protocol",
-        url: "https://drive.google.com/drive/folders/1VRcPilzqyT9NlwxmttqtYXPpivUGDCUI?usp=sharing",
-      },
-      {
-        name: "McKinsey Forward Program",
-        url: "https://www.credly.com/badges/6736f691-7b37-4999-bfec-f670c6a1c279/public_url",
-      },
-    ],
-  },
+  { name: "DP-700 Fabric Data Engineer Associate", url: "https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/12a81ed560fc6b0c" },
+  { name: "AZ-400 DevOps Engineer Expert", url: "https://learn.microsoft.com/en-us/users/simrangarg-5670/transcript/71yqae52ox2wrw7" },
+  { name: "DP-203 Azure Data Engineer Associate", url: "https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/47d23e4949c96868" },
+  { name: "DP-600 Fabric Analytics Engineer Associate", url: "https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/a985ce8d0ebdbdde" },
+  { name: "AWS Cloud Practitioner (CLF-C02)", url: "https://cp.certmetrics.com/amazon/en/public/verify/credential/6276e4cdc55a462eb3a94c90e95074bc" },
+  { name: "Databricks Data Engineer Associate", url: "https://credentials.databricks.com/923b9b56-ff8e-4502-a99a-ca4dd2b3f618" },
+  { name: "HashiCorp Terraform Associate (004)", url: "https://www.credly.com/badges/b7983113-c25d-434d-9f4e-7cb403edf8db/public_url" },
+  { name: "Anthropic AI Fluency and AI Engineering Learning Path", url: "https://drive.google.com/drive/folders/1VRcPilzqyT9NlwxmttqtYXPpivUGDCUI?usp=sharing" },
+  { name: "McKinsey Forward Program", url: "https://www.credly.com/badges/6736f691-7b37-4999-bfec-f670c6a1c279/public_url" },
 ]
 
 const publications = [
@@ -93,40 +41,68 @@ const publications = [
 const linkClass =
   "text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
 
+const blockHeading = "border-b border-border pb-2 text-lg font-semibold text-foreground"
+
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-28 border-t border-border">
+    <section id="about" className="py-12 md:py-16 border-t border-border">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">About</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground heading-bar">About</h2>
 
-        <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-muted-foreground">
-          <p>
-            As a Data Engineer at Central Co-op and a data science graduate of the University of Glasgow, I own an
-            enterprise Azure data platform end to end: ingestion, warehousing, reconciliation and governance under UK
-            GDPR. My work centres on pipelines that are checked by control totals, built on Synapse, Data Factory,
-            Microsoft Fabric and Databricks.
-          </p>
-          <p>
-            Before this I worked in deep learning research, public health analysis and SAP data consulting, and that
-            mix shapes how I approach a problem. I like working on projects that are technically sound and useful to
-            the people relying on them.
-          </p>
-        </div>
+        <div className="mt-8 grid gap-10 lg:grid-cols-3">
+          <div className="space-y-3 text-base leading-relaxed text-muted-foreground">
+            <p>
+              As a Data Engineer at Central Co-op and a data science graduate of the University of Glasgow, I own an
+              enterprise Azure data platform end to end: ingestion, warehousing, reconciliation and governance under UK
+              GDPR. My work centres on pipelines that are checked by control totals, built on Synapse, Data Factory,
+              Microsoft Fabric and Databricks.
+            </p>
+            <p>
+              Before this I worked in deep learning research, public health analysis and SAP data consulting, and that
+              mix shapes how I approach a problem. I like working on projects that are technically sound and useful to
+              the people relying on them.
+            </p>
+          </div>
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-3">
           <div>
-            <h3 className="border-b border-border pb-3 text-lg font-semibold text-foreground">Education</h3>
-            <ul className="mt-5 space-y-5">
+            <h3 className={blockHeading}>Education and certifications</h3>
+            <ul className="mt-4 space-y-2">
               {education.map((item) => (
-                <li key={item.degree}>
-                  <p className="text-base font-medium text-foreground">{item.degree}</p>
-                  <p className="text-sm text-muted-foreground">{item.detail}</p>
+                <li key={item.degree} className="text-base">
+                  <span className="font-medium text-foreground">{item.degree}</span>
+                  <span className="text-sm text-muted-foreground">, {item.detail}</span>
                 </li>
               ))}
             </ul>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {certifications.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block rounded-full border border-violet-200 bg-violet-50 px-3 py-0.5 text-sm font-medium text-violet-900 transition-colors hover:bg-violet-100"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <h3 className="mt-12 border-b border-border pb-3 text-lg font-semibold text-foreground">Beyond work</h3>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+          <div>
+            <h3 className={blockHeading}>Publications and achievements</h3>
+            <ul className="mt-4 space-y-2.5">
+              {publications.map((item) => (
+                <li key={item.title} className="text-[15px] leading-snug">
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    {item.title}
+                  </a>
+                  <span className="text-sm text-muted-foreground"> ({item.venue})</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
               Distinguished Services Award and Secretary at Rotaract (500+ events), Sportsmanship Award and gold medals
               in football, softball and cricket at Amity, and a Letter of Recommendation from Heritage Trust Network. I
               also run a YouTube channel,{" "}
@@ -135,40 +111,6 @@ export function AboutSection() {
               </a>
               .
             </p>
-          </div>
-
-          <div>
-            <h3 className="border-b border-border pb-3 text-lg font-semibold text-foreground">Certifications</h3>
-            <div className="mt-5 space-y-6">
-              {certifications.map((group) => (
-                <div key={group.issuer}>
-                  <p className="text-sm font-medium text-primary">{group.issuer}</p>
-                  <ul className="mt-2 space-y-2">
-                    {group.items.map((item) => (
-                      <li key={item.name} className="text-base leading-snug">
-                        <a href={item.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="border-b border-border pb-3 text-lg font-semibold text-foreground">Publications</h3>
-            <ul className="mt-5 space-y-6">
-              {publications.map((item) => (
-                <li key={item.title}>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className={`text-base leading-snug ${linkClass}`}>
-                    {item.title}
-                  </a>
-                  <p className="mt-1 text-sm text-muted-foreground">{item.venue}</p>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>
