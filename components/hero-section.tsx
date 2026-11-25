@@ -1,4 +1,4 @@
-import { Download, Youtube, Github, Linkedin, Mail } from "lucide-react"
+import { FileText, Youtube, Github, Linkedin, Mail } from "lucide-react"
 import { PipelineVisual } from "@/components/pipeline-visual"
 
 const links = [
@@ -43,11 +43,12 @@ export function HeroSection() {
               </a>
               <a
                 href="/Porfolio/Simran_Garg_CV.pdf"
-                download="Simran_Garg_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md border border-white/25 px-5 py-3 text-base font-semibold text-white transition-colors hover:border-cyan-300 hover:text-cyan-300"
               >
-                <Download className="h-4 w-4" />
-                Download CV
+                <FileText className="h-4 w-4" />
+                View CV
               </a>
               <div className="flex items-center gap-1">
                 {links.map((link) => {
