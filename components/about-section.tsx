@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, MapPin, Award, Youtube, Cloud, Database, Trophy, BookOpen, Sparkles, Code2, Brain, Zap } from "lucide-react"
+import { GraduationCap, Award, Cloud, Database, BookOpen, Code2, Brain } from "lucide-react"
 
 export function AboutSection() {
   return (
@@ -28,27 +28,7 @@ export function AboutSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-20">
-          {/* First Row */}
-          {/* Location Card */}
-          <Card className="group relative overflow-hidden border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <CardContent className="p-6 relative">
-              <div className="flex items-center space-x-4">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-blue-500 blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                  <div className="relative p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 dark:text-white text-lg">Location</h3>
-                  <p className="text-gray-600 dark:text-gray-400 font-medium">United Kingdom 🇬🇧</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-8 items-start">
           {/* Education Card */}
           <Card className="group relative overflow-hidden border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -77,43 +57,6 @@ export function AboutSection() {
             </CardContent>
           </Card>
 
-          {/* Content Creator Card */}
-          <Card className="group relative overflow-hidden border-0 shadow-xl bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-950/50 dark:to-pink-950/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <div className="absolute top-0 right-0 p-2">
-              <div className="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded-full animate-pulse">
-                CREATOR
-              </div>
-            </div>
-            <CardContent className="p-6">
-              <div className="flex items-start space-x-4">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-red-500 blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                  <div className="relative p-3 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl shadow-lg group-hover:scale-110 transition-transform">
-                    <Youtube className="h-6 w-6 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-gray-900 dark:text-white text-lg">Content Creator</h3>
-                  <a href="https://www.youtube.com/@EvolvingSimran" target="_blank" rel="noopener noreferrer" className="text-red-600 dark:text-red-400 font-bold hover:underline">
-                    Evolving Simran
-                  </a>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    Sharing insights about data science and student life
-                  </p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <a href="https://www.youtube.com/@EvolvingSimran" target="_blank" rel="noopener noreferrer" className="text-xs px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full font-medium hover:bg-red-200 dark:hover:bg-red-900/40 transition-colors">
-                      Tech Education
-                    </a>
-                    <a href="https://www.youtube.com/@EvolvingSimran" target="_blank" rel="noopener noreferrer" className="text-xs px-2 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 rounded-full font-medium hover:bg-pink-200 dark:hover:bg-pink-900/40 transition-colors">
-                      Career Tips
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Second Row */}
           {/* Certifications Card */}
           <Card className="group relative overflow-hidden border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl hover:shadow-2xl transition-all duration-500 h-fit">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
@@ -129,7 +72,7 @@ export function AboutSection() {
                   <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-4 flex items-center gap-2">
                     Certifications
                     <span className="text-xs px-2 py-1 bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full font-bold">
-                      9 CERTS
+                      7 CERTS
                     </span>
                   </h3>
 
@@ -143,17 +86,13 @@ export function AboutSection() {
                         <span className="text-sm font-bold text-gray-900 dark:text-white">Microsoft Azure</span>
                       </div>
                       <div className="ml-8 space-y-1">
-                        <div className="flex items-center gap-2">
+                        <a href="https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/12a81ed560fc6b0c" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                           <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">Fabric Data Engineer Associate (DP-700)</span>
-                        </div>
-                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Fabric Data Engineer Associate (DP-700)</span>
+                        </a>
+                        <a href="https://learn.microsoft.com/en-us/users/simrangarg-5670/transcript/71yqae52ox2wrw7" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                           <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">DevOps Engineer Expert (AZ-400)</span>
-                        </div>
-                        <a href="https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/5f8151e18ca761c3" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                          <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Data Scientist Associate (DP-100)</span>
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">DevOps Engineer Expert (AZ-400)</span>
                         </a>
                         <a href="https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/47d23e4949c96868" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                           <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
@@ -179,10 +118,6 @@ export function AboutSection() {
                           <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
                           <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Cloud Practitioner (CLF-C02)</span>
                         </a>
-                        <div className="flex items-center gap-2">
-                          <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">Solutions Architect Associate (SAA-C03)</span>
-                        </div>
                       </div>
                     </div>
 
@@ -210,10 +145,10 @@ export function AboutSection() {
                         <span className="text-sm font-bold text-gray-900 dark:text-white">HashiCorp</span>
                       </div>
                       <div className="ml-8 space-y-1">
-                        <div className="flex items-center gap-2">
+                        <a href="https://www.credly.com/badges/b7983113-c25d-434d-9f4e-7cb403edf8db/public_url" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                           <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">Terraform Associate (004)</span>
-                        </div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Terraform Associate (004)</span>
+                        </a>
                       </div>
                     </div>
 
@@ -225,14 +160,14 @@ export function AboutSection() {
                         <span className="text-sm font-bold text-gray-900 dark:text-white">Learning Programmes</span>
                       </div>
                       <div className="ml-8 space-y-1">
-                        <div className="flex items-center gap-2">
+                        <a href="https://drive.google.com/drive/folders/1VRcPilzqyT9NlwxmttqtYXPpivUGDCUI?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
                           <div className="w-1 h-1 bg-teal-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">Anthropic: Claude AI Fluency and AI Engineering Learning Path, including Model Context Protocol</span>
-                        </div>
-                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Anthropic: Claude AI Fluency and AI Engineering Learning Path, including Model Context Protocol</span>
+                        </a>
+                        <a href="https://www.credly.com/badges/6736f691-7b37-4999-bfec-f670c6a1c279/public_url" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
                           <div className="w-1 h-1 bg-teal-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">McKinsey Forward Program</span>
-                        </div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">McKinsey Forward Program</span>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -278,7 +213,7 @@ export function AboutSection() {
                             <BookOpen className="h-3 w-3 text-white" />
                           </div>
                           <span className="text-xs font-semibold text-gray-900 dark:text-white hover:text-green-600 dark:hover:text-green-400">
-                            Sentiment Analysis using SVM on Twitter Data
+                            Sentiment Analysis of Twitter Data using Machine Learning: A Case Study of SVM Algorithm
                           </span>
                         </div>
                         <div className="ml-7 text-xs text-gray-600 dark:text-gray-400">Research Square, 2023</div>
@@ -296,7 +231,7 @@ export function AboutSection() {
                             Overview of Augmented Reality and its trends in Agriculture Industry
                           </span>
                         </div>
-                        <div className="ml-7 text-xs text-gray-600 dark:text-gray-400">Springer, 2021</div>
+                        <div className="ml-7 text-xs text-gray-600 dark:text-gray-400">Springer, 2022</div>
                       </a>
                     </div>
 
@@ -320,41 +255,16 @@ export function AboutSection() {
             </CardContent>
           </Card>
 
-          {/* Awards Card - MOVED TO LAST POSITION */}
-          <Card className="group relative overflow-hidden border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl hover:shadow-2xl transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <CardContent className="p-6">
-              <div className="flex items-start space-x-4">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-amber-500 blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                  <div className="relative p-3 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl shadow-lg">
-                    <Trophy className="h-6 w-6 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-3">Awards & Recognition</h3>
-                  <div className="space-y-2">
-                    {[
-                      "Distinguished Services Award - Rotaract",
-                      "Outstanding Performance Award",
-                      "Sportsmanship Award - Amity",
-                      "Gold Medals: Football, Softball, Cricket",
-                      "Secretary of Rotaract (500+ events)",
-                      "Letter of Recommendation: Heritage Trust Network"
-                    ].map((award, i) => (
-                      <div key={i} className="flex items-start gap-2 group/award">
-                        <Zap className="w-3 h-3 text-yellow-500 mt-0.5 group-hover/award:animate-pulse" />
-                        <span className="text-xs text-gray-600 dark:text-gray-400 group-hover/award:text-gray-800 dark:group-hover/award:text-gray-200 transition-colors">
-                          {award}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
+
+        {/* Awards and activities in one line */}
+        <p className="max-w-5xl mx-auto mb-16 text-center text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          <span className="font-semibold text-gray-900 dark:text-white">Beyond work:</span> Distinguished Services Award and Secretary at Rotaract (500+ events),
+          Sportsmanship Award and gold medals in football, softball and cricket at Amity, a Letter of Recommendation from Heritage Trust Network, and a YouTube channel,{" "}
+          <a href="https://www.youtube.com/@EvolvingSimran" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-700 dark:text-teal-300 hover:underline">
+            Evolving Simran
+          </a>.
+        </p>
 
         {/* Bio Section with enhanced design */}
         <div className="max-w-5xl mx-auto">
