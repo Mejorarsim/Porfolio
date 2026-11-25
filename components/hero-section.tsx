@@ -5,7 +5,7 @@ import { ArrowDown, Youtube, Github, Linkedin, Mail } from "lucide-react"
 
 export function HeroSection() {
   const scrollToAbout = () => {
-    const element = document.getElementById("about")
+    const element = document.getElementById("experience")
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
@@ -45,7 +45,7 @@ export function HeroSection() {
             </p>
 
 <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty animate-slide-up delay-300">
-              I'm a Data Engineer with 3+ years across data engineering, analytics and research. Since March 2025 I have owned an enterprise Azure data platform at Central Co-op, built on Synapse, Data Factory, Microsoft Fabric and Databricks, working in Python, PySpark and T-SQL. I rebuilt 119 tables across 8 schemas onto a Fabric lakehouse with control totals checked table by table, run 600+ source objects through one metadata driven framework, and cut a critical workload's runtime by 30%. I also share my tech journey and career insights on YouTube.
+              I'm a Data Engineer at Central Co-op, where I own an enterprise Azure data platform built on Synapse, Data Factory, Microsoft Fabric and Databricks. I rebuilt 119 tables across 8 schemas onto a Fabric lakehouse, run 600+ source objects through one metadata driven framework and cut a critical workload's runtime by 30%.
             </p>
           </div>
 
