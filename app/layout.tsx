@@ -13,9 +13,9 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "Simran Garg - Data Engineer & Cloud Enthusiast",
+  title: "Simran Garg | Data Engineer, Azure Data Platforms",
   description:
-    "Professional portfolio of Simran Garg, Data Engineer at Central Co-op with expertise in Azure, AWS, Python, and Machine Learning",
+    "Professional portfolio of Simran Garg, Data Engineer at Central Co-op working on Azure Synapse, Data Factory, Microsoft Fabric and Databricks",
   generator: "v0.app",
 }
 
