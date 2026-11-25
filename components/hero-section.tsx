@@ -41,11 +41,11 @@ export function HeroSection() {
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance animate-slide-up delay-200">
-              Data Engineer | Cloud Enthusiast | Content Creator
+              Data Engineer | Azure Data Platforms: Synapse, Microsoft Fabric, Databricks | Content Creator
             </p>
 
 <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto text-pretty animate-slide-up delay-300">
-              I'm a results-driven Data Engineer with 3+ years of experience transforming raw data into actionable insights. Specialising in building scalable ETL pipelines, cloud-native solutions on Azure and AWS, and real-time analytics platforms. I bring a strong foundation in Python, SQL, and data orchestration tools like Airflow and Fabric. My motivation lies in solving complex data challenges that drive business decisions. I'm also a content creator, sharing my tech journey and career insights on YouTube.
+              I'm a Data Engineer with 3+ years across data engineering, analytics and research. Since March 2025 I have owned an enterprise Azure data platform at Central Co-op, built on Synapse, Data Factory, Microsoft Fabric and Databricks, working in Python, PySpark and T-SQL. I rebuilt 119 tables across 8 schemas onto a Fabric lakehouse with control totals checked table by table, run 600+ source objects through one metadata driven framework, and cut a critical workload's runtime by 30%. I also share my tech journey and career insights on YouTube.
             </p>
           </div>
 

@@ -8,57 +8,70 @@ export function ExperienceSection() {
       title: "Data Engineer",
       company: "Central England Co-operative",
       location: "Lichfield, UK",
-      period: "March 2025 – Present",
+      period: "March 2025 to Present",
       type: "Full-time",
       description: [
-        "Built automated data pipelines using Azure Data Factory and SQL, integrating APIs and file-based workflows",
-        "Resolved ETL failures from schema mismatches, access errors, and credentials; added robust logging",
-        "Optimized ingestion via parallel processing and version-controlled deployment using Git",
-        "Automated ingestion using Azure Functions, monitored via Airflow; reduced latency by 30%",
-        "Collaborated with IT, BI, and finance teams to ensure secure, compliant data pipelines",
+        "Sole data engineer on an enterprise Azure Synapse warehouse serving finance, retail and operational reporting",
+        "Rebuilt 119 tables across 8 schemas onto a Microsoft Fabric lakehouse (OneLake, Delta Lake, medallion layers), with row level parity and control totals validated table by table before cutover",
+        "Set the engineering standards that an internal team and an external delivery partner both work to",
+        "Architect and run ingestion for 600+ registered source objects through one metadata driven framework in Python, PySpark and T-SQL on Azure Data Factory, Synapse and Databricks",
+        "Sources span REST APIs, Oracle, SQL Server, Delta Sharing (102 tables nightly) and SFTP (285 files, 4.1 GB daily), secured with Key Vault secrets and parameterised linked services",
+        "Built the reconciliation queries and alerting that caught what monitoring missed: a load reporting success for 27 days while writing nothing, a join silently dropping 731 articles for 41 days, 30 stores lost to a parser defect and 9.5% of daily sales lines misclassified",
+        "Cut a critical workload's runtime by 30%, replaced a row by row load with COPY INTO (7.6 million rows in 3.5 minutes) and recovered a 471 million row extract by removing a dead predicate",
+        "Lead production access governance, including a formal RBAC review that removed 13 stale external accounts",
+        "Mentor through pull request review and run platform operations sessions on connectivity, monitoring and alerting",
       ],
-      skills: ["Azure Data Factory", "SQL", "Python", "Git", "Apache Airflow", "Microsoft Fabric"],
+      skills: ["Azure Synapse", "Azure Data Factory", "Microsoft Fabric", "Databricks", "PySpark", "T-SQL", "Python", "Delta Lake", "Key Vault", "Git"],
     },
     {
-      title: "Research Data Assistant",
+      title: "Research Assistant",
       company: "University of Glasgow",
       location: "Glasgow, UK",
-      period: "November 2024 – March 2025",
+      period: "November 2024 to March 2025",
       type: "Full-time",
       description: [
-        "Conducted curriculum mapping using Excel and data models to identify interdisciplinary learning gaps",
-        "Analysed life expectancy factors under the SIPHER project using QCA methodology",
-        "Applied fuzzy-set QCA to model outcomes and derive health policy insights",
-        "Wrote R scripts for causal extraction; contributed to a forthcoming publication",
+        "Curriculum Archetypes Intern from November to December 2024, conducting curriculum mapping and interdisciplinary gap analysis using Excel based models, then Research Assistant from January 2025",
+        "Analysed determinants of life expectancy under the SIPHER programme using QCA, applying fuzzy set QCA to derive causal pathways informing public health insights",
+        "Developed R scripts for calibration, truth tables and Boolean minimisation",
       ],
       skills: ["R Programming", "QCA Analysis", "Data Modeling", "Statistical Analysis", "Research"],
     },
-{
+    {
       title: "Data Consultant",
-      company: "Prospecta Software Company",
+      company: "Prospecta Software",
       location: "Delhi, India",
-      period: "March 2023 – August 2023",
+      period: "March 2023 to July 2023",
       type: "Full-time",
       description: [
-        "Integrated Python and SQL with SAP Hana S4 to improve data quality and real-time insights",
-        "Improved ETL efficiency by 25% and reduced inconsistencies by 20% via CI/CD restructuring",
-        "Built Tableau dashboards to validate data integrity with cross-functional teams",
-        "Managed GitHub repositories, reviewed PRs, and enforced engineering code standards",
+        "Built Python and SQL integrations with SAP HANA S/4, lifting reliability by 25% and cutting data inconsistencies by 20% through a CI/CD restructure",
+        "Enforced engineering standards through peer reviewed pull requests",
+        "Built Tableau dashboards that client teams used to validate data themselves",
       ],
-      skills: ["Python", "SQL", "SAP Hana S4", "Tableau", "CI/CD", "GitHub"],
+      skills: ["Python", "SQL", "SAP HANA S/4", "Tableau", "CI/CD", "GitHub"],
     },
     {
       title: "Python Cloud Developer",
       company: "BCS Infallible Technology",
       location: "Delhi, India",
-      period: "June 2022 – November 2022",
+      period: "June 2022 to September 2022",
       type: "Contract",
       description: [
-        "Built emotion recognition models using OpenCV and TensorFlow; improved performance by 40%",
-        "Developed Emojify, a Dockerized AI tool for streamlined deployment and scalability",
-        "Automated model evaluation in Python; deployed inference pipelines on AWS EC2",
+        "Built and trained emotion recognition models in Python with TensorFlow and OpenCV, improving classification accuracy by 40% against the previous baseline",
+        "Containerised the inference service with Docker and deployed it on AWS EC2, replacing manual setup with a repeatable deployment",
       ],
       skills: ["Python", "TensorFlow", "OpenCV", "Docker", "AWS EC2", "Computer Vision"],
+    },
+    {
+      title: "Technical Head",
+      company: "JAX Foundation",
+      location: "Delhi, India",
+      period: "September 2019 to October 2021",
+      type: "",
+      description: [
+        "Built Power BI reporting across 50+ national programmes, cutting manual reporting time by 60%; received a Letter of Recommendation",
+        "Set the SQL standards and templates regional teams worked to, consolidating fragmented sources into one reporting model",
+      ],
+      skills: ["Power BI", "SQL", "Reporting", "Data Modeling"],
     },
   ]
 
@@ -78,7 +91,7 @@ export function ExperienceSection() {
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            3+ years of hands-on experience building robust data solutions across diverse industries
+            3+ years across data engineering, analytics and research
           </p>
         </div>
 
@@ -108,9 +121,11 @@ export function ExperienceSection() {
                             <Calendar className="h-4 w-4" />
                             <span>{exp.period}</span>
                           </div>
-                          <Badge className="bg-teal-600 text-white hover:bg-teal-700">
-                            {exp.type}
-                          </Badge>
+                          {exp.type && (
+                            <Badge className="bg-teal-600 text-white hover:bg-teal-700">
+                              {exp.type}
+                            </Badge>
+                          )}
                         </div>
                       </div>
                     </div>

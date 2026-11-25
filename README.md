@@ -6,15 +6,16 @@
 
 ## 👩‍💻 About Me
 
-Data Engineer at Central Co-op with expertise in Microsoft Fabric, Azure, and AWS. I specialize in building secure, scalable data pipelines and transforming complex data into actionable business insights. Currently based in the UK with a Master's degree in Data Science from the University of Glasgow.
+Data Engineer at Central Co-op with 3+ years across data engineering, analytics and research. I own an enterprise Azure data platform on Synapse, Data Factory, Microsoft Fabric and Databricks, working in Python, PySpark and T-SQL. Based in Birmingham, UK, with an MSc in Data Science from the University of Glasgow.
 
 ## 🎯 Current Role
 
 **Data Engineer @ Central Co-op** (March 2025 - Present)
-- Building and maintaining automated data pipelines using Azure Data Factory and SQL
-- Optimizing ETL workflows with parallel processing and robust error handling
-- Implementing version-controlled deployments across dev, test, and prod environments
-- Collaborating with cross-functional teams to ensure secure, compliant data flows
+- Sole data engineer on an enterprise Azure Synapse warehouse serving finance, retail and operational reporting
+- Rebuilt 119 tables across 8 schemas onto a Microsoft Fabric lakehouse, with control totals validated table by table before cutover
+- Run ingestion for 600+ source objects through one metadata driven framework on Azure Data Factory, Synapse and Databricks
+- Built the reconciliation queries and alerting that catch silent failures monitoring had missed
+- Cut a critical workload's runtime by 30% and lead production access governance
 
 ## 🛠️ Technical Stack
 
@@ -31,8 +32,10 @@ Data Engineer at Central Co-op with expertise in Microsoft Fabric, Azure, and AW
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 ### Data Tools
-- **Microsoft Fabric** - Enterprise data integration and analytics
+- **Azure Synapse Analytics** - Enterprise data warehousing
+- **Microsoft Fabric** - Lakehouse, OneLake and analytics
 - **Azure Data Factory** - ETL/ELT pipeline orchestration
+- **Terraform** - Infrastructure as code
 - **Power BI** - Business intelligence and visualization
 - **Apache Spark** - Big data processing
 - **Git/GitHub** - Version control and CI/CD
@@ -58,6 +61,10 @@ Data Engineer at Central Co-op with expertise in Microsoft Fabric, Azure, and AW
 
 ## 🏆 Certifications
 
+- **Microsoft Certified: Fabric Data Engineer Associate (DP-700)** (2026)
+- **Microsoft Certified: DevOps Engineer Expert (AZ-400)** (2026)
+- **AWS Certified Solutions Architect Associate (SAA-C03)**
+- **HashiCorp Certified: Terraform Associate (004)**
 - **Databricks Certified Data Engineer Associate** (Aug 2025 - Expires Aug 2027)
 - **Databricks for Data Engineering** (Aug 2025)
 - **AWS Certified Cloud Practitioner** (Feb 2025 - Expires Feb 2028)
@@ -82,7 +89,7 @@ Data Engineer at Central Co-op with expertise in Microsoft Fabric, Azure, and AW
 - **GitHub**: [Mejorarsim](https://github.com/Mejorarsim)
 - **Portfolio**: [mejorarsim.github.io/Porfolio](https://mejorarsim.github.io/Porfolio/)
 - **YouTube**: Evolving Simran [UK Student Journey](https://www.youtube.com/@EvolvingSimran)
-- **Location**: London, England, UK
+- **Location**: Birmingham, England, UK
 
 ## 💡 Open To
 

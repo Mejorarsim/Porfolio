@@ -129,7 +129,7 @@ export function AboutSection() {
                   <h3 className="font-bold text-gray-900 dark:text-white text-lg mb-4 flex items-center gap-2">
                     Certifications
                     <span className="text-xs px-2 py-1 bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full font-bold">
-                      6+ CERTS
+                      9 CERTS
                     </span>
                   </h3>
 
@@ -143,6 +143,14 @@ export function AboutSection() {
                         <span className="text-sm font-bold text-gray-900 dark:text-white">Microsoft Azure</span>
                       </div>
                       <div className="ml-8 space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400">Fabric Data Engineer Associate (DP-700)</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400">DevOps Engineer Expert (AZ-400)</span>
+                        </div>
                         <a href="https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/5f8151e18ca761c3" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                           <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
                           <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Data Scientist Associate (DP-100)</span>
@@ -173,7 +181,7 @@ export function AboutSection() {
                         </a>
                         <div className="flex items-center gap-2">
                           <div className="w-1 h-1 bg-orange-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">Solutions Architect Associate</span>
+                          <span className="text-xs text-gray-600 dark:text-gray-400">Solutions Architect Associate (SAA-C03)</span>
                         </div>
                       </div>
                     </div>
@@ -191,6 +199,40 @@ export function AboutSection() {
                           <div className="w-1 h-1 bg-red-400 rounded-full"></div>
                           <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Data Engineer Associate</span>
                         </a>
+                      </div>
+                    </div>
+
+                    <div className="group/item p-3 rounded-xl bg-gradient-to-r from-purple-50 to-transparent dark:from-purple-900/20 hover:from-purple-100 dark:hover:from-purple-900/30 transition-all">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <div className="p-1.5 bg-purple-500 rounded-lg">
+                          <Cloud className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-sm font-bold text-gray-900 dark:text-white">HashiCorp</span>
+                      </div>
+                      <div className="ml-8 space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400">Terraform Associate (004)</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="group/item p-3 rounded-xl bg-gradient-to-r from-teal-50 to-transparent dark:from-teal-900/20 hover:from-teal-100 dark:hover:from-teal-900/30 transition-all">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <div className="p-1.5 bg-teal-500 rounded-lg">
+                          <Cloud className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-sm font-bold text-gray-900 dark:text-white">Learning Programmes</span>
+                      </div>
+                      <div className="ml-8 space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="w-1 h-1 bg-teal-400 rounded-full"></div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400">Anthropic: Claude AI Fluency and AI Engineering Learning Path, including Model Context Protocol</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-1 h-1 bg-teal-400 rounded-full"></div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400">McKinsey Forward Program</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -224,7 +266,22 @@ export function AboutSection() {
                             Aspect Level Sentiment Analysis on Twitter Tweets for Sarcasm Detection
                           </span>
                         </div>
-                        <div className="ml-7 text-xs text-gray-600 dark:text-gray-400">Springer, 2024</div>
+                        <div className="ml-7 text-xs text-gray-600 dark:text-gray-400">Springer, 2025</div>
+                      </a>
+                    </div>
+
+                    {/* Publication: Research Square */}
+                    <div className="group/item p-3 rounded-xl bg-gradient-to-r from-green-50 to-transparent dark:from-green-900/20 hover:from-green-100 dark:hover:from-green-900/30 transition-all">
+                      <a href="https://doi.org/10.21203/rs.3.rs-2850627/v2" target="_blank" rel="noopener noreferrer" className="block">
+                        <div className="flex items-center space-x-2 mb-1">
+                          <div className="p-1.5 bg-green-500 rounded-lg">
+                            <BookOpen className="h-3 w-3 text-white" />
+                          </div>
+                          <span className="text-xs font-semibold text-gray-900 dark:text-white hover:text-green-600 dark:hover:text-green-400">
+                            Sentiment Analysis using SVM on Twitter Data
+                          </span>
+                        </div>
+                        <div className="ml-7 text-xs text-gray-600 dark:text-gray-400">Research Square, 2023</div>
                       </a>
                     </div>
 
@@ -282,7 +339,8 @@ export function AboutSection() {
                       "Outstanding Performance Award",
                       "Sportsmanship Award - Amity",
                       "Gold Medals: Football, Softball, Cricket",
-                      "Secretary of Rotaract (500+ events)"
+                      "Secretary of Rotaract (500+ events)",
+                      "Letter of Recommendation: Heritage Trust Network"
                     ].map((award, i) => (
                       <div key={i} className="flex items-start gap-2 group/award">
                         <Zap className="w-3 h-3 text-yellow-500 mt-0.5 group-hover/award:animate-pulse" />
@@ -311,15 +369,15 @@ export function AboutSection() {
               
               <div className="space-y-6 text-center">
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  As a <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">Data Engineer at Central Co-op</span> and 
-                  a passionate data science graduate from the <span className="font-semibold text-gray-900 dark:text-white">University of Glasgow</span>, 
-                  I thrive at the intersection of cloud engineering, machine learning, and responsible AI. I specialize in building 
-                  <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600"> secure, scalable data pipelines</span> using 
-                  tools like Microsoft Fabric, Azure, and AWS.
+                  As a <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">Data Engineer at Central Co-op</span> and
+                  a data science graduate of the <span className="font-semibold text-gray-900 dark:text-white">University of Glasgow</span>,
+                  I own an enterprise Azure data platform end to end: ingestion, warehousing, reconciliation and governance under UK GDPR. My work centres on
+                  <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600"> pipelines that are checked by control totals</span>, built on
+                  Synapse, Data Factory, Microsoft Fabric and Databricks.
                 </p>
 
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {["Microsoft Fabric", "Azure", "AWS", "Machine Learning", "Data Pipelines", "Responsible AI"].map((skill) => (
+                  {["Azure Synapse", "Microsoft Fabric", "Databricks", "PySpark", "Data Governance", "Reconciliation"].map((skill) => (
                     <span key={skill} className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30 text-teal-700 dark:text-teal-300 rounded-full">
                       {skill}
                     </span>
@@ -327,10 +385,10 @@ export function AboutSection() {
                 </div>
 
                 <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  With hands-on experience across diverse domains—from <span className="font-semibold">deep learning research</span> and 
-                  <span className="font-semibold"> economic policy analysis</span> to <span className="font-semibold">enterprise data architecture</span>—I 
-                  bring a versatile skillset and a mindset for continuous improvement. I'm always excited to collaborate on projects 
-                  that are <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">technically robust and purpose-driven</span>.
+                  Before this I worked in <span className="font-semibold">deep learning research</span>,
+                  <span className="font-semibold"> public health analysis</span> and <span className="font-semibold">SAP data consulting</span>, and
+                  that mix shapes how I approach a problem. I like working on projects
+                  that are <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">technically sound and useful to the people relying on them</span>.
                 </p>
               </div>
             </CardContent>
