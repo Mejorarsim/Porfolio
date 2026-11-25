@@ -143,14 +143,14 @@ export function AboutSection() {
                         <span className="text-sm font-bold text-gray-900 dark:text-white">Microsoft Azure</span>
                       </div>
                       <div className="ml-8 space-y-1">
-                        <div className="flex items-center gap-2">
+                        <a href="https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/12a81ed560fc6b0c" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                           <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">Fabric Data Engineer Associate (DP-700)</span>
-                        </div>
-                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Fabric Data Engineer Associate (DP-700)</span>
+                        </a>
+                        <a href="https://learn.microsoft.com/en-us/users/simrangarg-5670/transcript/71yqae52ox2wrw7" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                           <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">DevOps Engineer Expert (AZ-400)</span>
-                        </div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">DevOps Engineer Expert (AZ-400)</span>
+                        </a>
                         <a href="https://learn.microsoft.com/en-us/users/simrangarg-5670/credentials/5f8151e18ca761c3" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                           <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
                           <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Data Scientist Associate (DP-100)</span>
@@ -210,10 +210,10 @@ export function AboutSection() {
                         <span className="text-sm font-bold text-gray-900 dark:text-white">HashiCorp</span>
                       </div>
                       <div className="ml-8 space-y-1">
-                        <div className="flex items-center gap-2">
+                        <a href="https://www.credly.com/badges/b7983113-c25d-434d-9f4e-7cb403edf8db/public_url" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                           <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">Terraform Associate (004)</span>
-                        </div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Terraform Associate (004)</span>
+                        </a>
                       </div>
                     </div>
 
@@ -225,14 +225,14 @@ export function AboutSection() {
                         <span className="text-sm font-bold text-gray-900 dark:text-white">Learning Programmes</span>
                       </div>
                       <div className="ml-8 space-y-1">
-                        <div className="flex items-center gap-2">
+                        <a href="https://drive.google.com/drive/folders/1VRcPilzqyT9NlwxmttqtYXPpivUGDCUI?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
                           <div className="w-1 h-1 bg-teal-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">Anthropic: Claude AI Fluency and AI Engineering Learning Path, including Model Context Protocol</span>
-                        </div>
-                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Anthropic: Claude AI Fluency and AI Engineering Learning Path, including Model Context Protocol</span>
+                        </a>
+                        <a href="https://www.credly.com/badges/6736f691-7b37-4999-bfec-f670c6a1c279/public_url" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
                           <div className="w-1 h-1 bg-teal-400 rounded-full"></div>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">McKinsey Forward Program</span>
-                        </div>
+                          <span className="text-xs text-gray-600 dark:text-gray-400 hover:underline">McKinsey Forward Program</span>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -278,7 +278,7 @@ export function AboutSection() {
                             <BookOpen className="h-3 w-3 text-white" />
                           </div>
                           <span className="text-xs font-semibold text-gray-900 dark:text-white hover:text-green-600 dark:hover:text-green-400">
-                            Sentiment Analysis using SVM on Twitter Data
+                            Sentiment Analysis of Twitter Data using Machine Learning: A Case Study of SVM Algorithm
                           </span>
                         </div>
                         <div className="ml-7 text-xs text-gray-600 dark:text-gray-400">Research Square, 2023</div>
