@@ -1,9 +1,6 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ArrowDown, Github, Play } from "lucide-react"
+import { ArrowDown, Github, Play, X } from "lucide-react"
 import { useState } from "react"
 
 type Project = {
@@ -31,21 +28,21 @@ function PipelineDiagram() {
     <div
       role="img"
       aria-label="Architecture: Python generator to Apache Kafka to Spark Structured Streaming to PostgreSQL to Streamlit dashboard"
-      className="rounded-lg border border-border bg-muted/30 p-4"
+      className="rounded-lg bg-muted p-5"
     >
-      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Architecture</p>
+      <p className="text-sm font-semibold text-foreground mb-4">Architecture</p>
       <div className="flex flex-col items-stretch">
         {pipelineStages.map((stage, index) => (
           <div key={stage.name} className="flex flex-col items-center">
-            <div className="w-full rounded-md border border-primary/30 bg-background px-3 py-2 text-center">
+            <div className="w-full rounded-md border border-border bg-background px-4 py-2.5">
               <p className="text-sm font-semibold text-foreground">{stage.name}</p>
-              <p className="text-xs text-muted-foreground">{stage.detail}</p>
+              <p className="text-sm text-muted-foreground">{stage.detail}</p>
             </div>
-            {index < pipelineStages.length - 1 && <ArrowDown className="h-4 w-4 my-1 text-primary" aria-hidden="true" />}
+            {index < pipelineStages.length - 1 && <ArrowDown className="h-4 w-4 my-1.5 text-primary" aria-hidden="true" />}
           </div>
         ))}
       </div>
-      <p className="text-xs text-muted-foreground mt-3 text-center">All services run under Docker Compose</p>
+      <p className="text-sm text-muted-foreground mt-4">All services run under Docker Compose</p>
     </div>
   )
 }
@@ -108,114 +105,108 @@ export function ProjectsSection() {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[family-name:var(--font-space-grotesk)]">
-            Projects
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Three projects, each with the problem, the approach and what came out of it
-          </p>
-        </div>
+    <section id="projects" className="py-20 md:py-28 border-t border-border">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">Projects</h2>
+        <p className="mt-3 text-lg text-muted-foreground max-w-2xl">
+          Three projects, each with the problem, the approach and what came out of it
+        </p>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="mt-12 grid lg:grid-cols-2 gap-6">
           {projects.map((project) => (
-            <Card
+            <article
               key={project.title}
-              className={`hover:shadow-lg transition-all duration-300 ring-2 ring-primary/20 hover:ring-primary/40 ${
-                project.lead ? "lg:col-span-2" : ""
-              }`}
+              className={`rounded-xl border border-border bg-card p-6 md:p-8 ${project.lead ? "lg:col-span-2" : ""}`}
             >
-              <CardHeader>
-                <div className="mb-2">
-                  <Badge className="text-xs">{project.type}</Badge>
-                </div>
-                <CardTitle className="text-xl font-bold text-balance font-[family-name:var(--font-space-grotesk)]">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className={project.lead ? "grid md:grid-cols-5 gap-8" : ""}>
-                  <div className={project.lead ? "md:col-span-3" : ""}>
-                    <dl className="space-y-3 mb-4">
-                      {sections(project).map((part) => (
-                        <div key={part.label}>
-                          <dt className="text-xs font-semibold uppercase tracking-wider text-primary">{part.label}</dt>
-                          <dd className="text-sm text-muted-foreground leading-relaxed text-pretty">{part.text}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                    <div className="flex flex-wrap gap-1 mb-4">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-1" />
-                          Code
-                        </a>
-                      </Button>
-                      {project.demoVideo && (
-                        <Button
-                          variant="default"
-                          size="sm"
-                          onClick={() => setSelectedVideo(project)}
-                          className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-gray-900"
-                        >
-                          <Play className="h-4 w-4 mr-1" />
-                          Demo
-                        </Button>
-                      )}
-                    </div>
+              <div className={project.lead ? "grid md:grid-cols-5 gap-8 md:gap-10" : ""}>
+                <div className={project.lead ? "md:col-span-3" : ""}>
+                  <p className="text-sm font-medium text-primary">{project.type}</p>
+                  <h3 className="mt-1 text-2xl font-semibold tracking-tight text-foreground text-balance">
+                    {project.title}
+                  </h3>
+
+                  <dl className="mt-6 space-y-4">
+                    {sections(project).map((part) => (
+                      <div key={part.label}>
+                        <dt className="text-sm font-semibold text-foreground">{part.label}</dt>
+                        <dd className="mt-1 text-base leading-relaxed text-muted-foreground">{part.text}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  <p className="mt-6 text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">Built with:</span> {project.technologies.join(", ")}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+                    >
+                      <Github className="h-4 w-4" />
+                      View code
+                    </a>
+                    {project.demoVideo && (
+                      <button
+                        type="button"
+                        onClick={() => setSelectedVideo(project)}
+                        className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-[#0b5a70]"
+                      >
+                        <Play className="h-4 w-4" />
+                        Watch demo
+                      </button>
+                    )}
                   </div>
-                  {project.lead && (
-                    <div className="md:col-span-2">
-                      <PipelineDiagram />
-                    </div>
-                  )}
                 </div>
-              </CardContent>
-            </Card>
+                {project.lead && (
+                  <div className="md:col-span-2">
+                    <PipelineDiagram />
+                  </div>
+                )}
+              </div>
+            </article>
           ))}
         </div>
 
-        {/* Earlier work */}
-        <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-          <span className="font-semibold text-foreground">Earlier work:</span>
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+          <span className="font-semibold text-foreground">Earlier work</span>
           {earlierWork.map((item) => (
             <a
               key={item.title}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary hover:underline"
+              className="text-muted-foreground underline decoration-border underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
             >
-              <Github className="h-3.5 w-3.5" />
               {item.title}
             </a>
           ))}
         </div>
 
-        {/* Video Modal */}
         {selectedVideo && (
           <div
             className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
             onClick={() => setSelectedVideo(null)}
           >
             <div
-              className="bg-background rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden"
+              role="dialog"
+              aria-modal="true"
+              aria-label={`${selectedVideo.title} demo`}
+              className="bg-background rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-4 border-b flex items-center justify-between">
-                <h3 className="text-xl font-bold font-[family-name:var(--font-space-grotesk)]">{selectedVideo.title}</h3>
-                <Button variant="ghost" size="sm" onClick={() => setSelectedVideo(null)}>
-                  ✕
-                </Button>
+              <div className="p-4 border-b border-border flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-foreground">{selectedVideo.title}</h3>
+                <button
+                  type="button"
+                  aria-label="Close demo"
+                  onClick={() => setSelectedVideo(null)}
+                  className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted"
+                >
+                  <X className="h-5 w-5" />
+                </button>
               </div>
               <div className="p-4">
                 <video className="w-full rounded-lg" controls autoPlay src={selectedVideo.demoVideo}>

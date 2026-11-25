@@ -4,26 +4,26 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color palette for professional data engineer portfolio */
-  --background: oklch(1 0 0); /* #ffffff */
-  --foreground: oklch(0.35 0 0); /* #4b5563 */
-  --card: oklch(0.99 0 0); /* #f9fafb */
-  --card-foreground: oklch(0.35 0 0); /* #4b5563 */
-  --popover: oklch(1 0 0); /* #ffffff */
-  --popover-foreground: oklch(0.35 0 0); /* #4b5563 */
-  --primary: oklch(0.55 0.15 200); /* #0891b2 cyan-600 */
-  --primary-foreground: oklch(1 0 0); /* #ffffff */
-  --secondary: oklch(0.65 0.15 160); /* #10b981 emerald-500 */
-  --secondary-foreground: oklch(1 0 0); /* #ffffff */
-  --muted: oklch(0.99 0 0); /* #f9fafb */
-  --muted-foreground: oklch(0.35 0 0); /* #4b5563 */
-  --accent: oklch(0.65 0.15 160); /* #10b981 emerald-500 */
-  --accent-foreground: oklch(1 0 0); /* #ffffff */
+  /* Calm palette: ink text on white, one teal accent */
+  --background: #ffffff;
+  --foreground: #10202b; /* ink */
+  --card: #ffffff;
+  --card-foreground: #10202b;
+  --popover: #ffffff;
+  --popover-foreground: #10202b;
+  --primary: #0e7490; /* teal */
+  --primary-foreground: #ffffff;
+  --secondary: #f2f5f7; /* mist */
+  --secondary-foreground: #10202b;
+  --muted: #f2f5f7;
+  --muted-foreground: #4a5964; /* slate */
+  --accent: #e6f3f6; /* teal tint */
+  --accent-foreground: #0b5a70;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0 0); /* #e2e8f0 */
-  --input: oklch(0.99 0 0); /* #f9fafb */
-  --ring: oklch(0.55 0.15 200); /* #0891b2 */
+  --border: #dce3e8; /* line */
+  --input: #dce3e8;
+  --ring: #0e7490;
   --chart-1: oklch(0.55 0.15 200);
   --chart-2: oklch(0.65 0.15 160);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -120,89 +120,27 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-/* Added custom animations for modern sliding effects */
-@layer utilities {
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-    opacity: 0;
-    transform: translateY(30px);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-
-  .animate-slide-up.delay-200 {
-    animation-delay: 0.2s;
-  }
-
-  .animate-slide-up.delay-300 {
-    animation-delay: 0.3s;
-  }
-
-  .animate-slide-up.delay-400 {
-    animation-delay: 0.4s;
-  }
-
-  .animate-slide-up.delay-500 {
-    animation-delay: 0.5s;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  /* Added custom button class to fix contrast issues */
-  .gradient-button {
-    background: linear-gradient(to right, oklch(0.55 0.15 200), oklch(0.65 0.15 160)) !important;
-    color: white !important;
-    border: none !important;
-  }
-
-  .gradient-button:hover {
-    background: linear-gradient(to right, oklch(0.5 0.15 200), oklch(0.6 0.15 160)) !important;
-    color: white !important;
-  }
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes glow {
-  from {
-    box-shadow: 0 0 20px rgba(8, 145, 178, 0.3);
-  }
-  to {
-    box-shadow: 0 0 30px rgba(8, 145, 178, 0.6);
+  * {
+    transition: none !important;
+    animation: none !important;
   }
 }
