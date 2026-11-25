@@ -11,10 +11,10 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <AboutSection />
-      <SkillsSection />
       <ExperienceSection />
       <ProjectsSection />
+      <SkillsSection />
+      <AboutSection />
       <ContactSection />
     </main>
   )
