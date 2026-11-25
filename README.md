@@ -61,15 +61,15 @@ Data Engineer at Central Co-op with 3+ years across data engineering, analytics 
 
 ## 🏆 Certifications
 
-- **Microsoft Certified: Fabric Data Engineer Associate (DP-700)** (2026)
-- **Microsoft Certified: DevOps Engineer Expert (AZ-400)** (2026)
+- **Microsoft Certified: Fabric Data Engineer Associate (DP-700)** (Nov 2026 - Expires Nov 2028)
+- **Microsoft Certified: DevOps Engineer Expert (AZ-400)** (Nov 2026 - Expires Nov 2027)
 - **AWS Certified Solutions Architect Associate (SAA-C03)**
-- **HashiCorp Certified: Terraform Associate (004)**
+- **HashiCorp Certified: Terraform Associate (004)** (Mar 2026)
 - **Databricks Certified Data Engineer Associate** (Aug 2025 - Expires Aug 2027)
 - **Databricks for Data Engineering** (Aug 2025)
 - **AWS Certified Cloud Practitioner** (Feb 2025 - Expires Feb 2028)
-- **Microsoft Certified: Fabric Analytics Engineer Associate** (Feb 2025 - Expires Feb 2026)
-- **Microsoft Certified: Azure Data Engineer Associate** (Jan 2025 - Expires Jan 2026)
+- **Microsoft Certified: Fabric Analytics Engineer Associate** (Feb 2025 - Expires Feb 2027)
+- **Microsoft Certified: Azure Data Engineer Associate** (Jan 2025 - Expires Jan 2027)
 - **Microsoft Certified: Azure Data Scientist Associate** (Jan 2025 - Expires Jan 2026)
 - **FUSE Admin** & **Fuse Stewardship** - Prospecta Software (Mar 2023)
 - **Introduction to C++** - Simplilearn (Sep 2022)
